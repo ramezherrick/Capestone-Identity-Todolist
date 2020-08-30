@@ -1,0 +1,60 @@
+﻿@model Todo
+<style>
+    body {
+        background-color: black;
+    }
+
+    #boarder {
+        border: solid;
+        border-color: white;
+        padding: 30px;
+    }
+</style>
+
+
+
+
+
+<div class="row">
+    <div class="col-xl-4 form-group" id="boarder">
+        <center><img src="~/css/giphy.gif" height="200" width="300" /></center>
+        <br />
+        <br />
+        <center><a href="../Home/DisplayTask" class="btn btn-primary">Display All Tasks</a></center>
+    </div>
+    <div class="col-xl-4 form-group" id="boarder">
+        <center><img src="~/css/Search.gif" height="200" width="300" /></center>
+        <br />
+        <br />
+        <center><a href="../Home/SearchToDoItem" class="btn btn-primary">Search Items By Title</a></center>
+        <br />
+        <br />
+        <center><a href="../Home/SortByDueDate" class="btn btn-primary">Search Items By Due Date</a></center>
+        <br />
+        <br />
+        <center><a href="../Home/SortByCompletionStatus" class="btn btn-primary">Search Items By Completion</a></center>
+    </div>
+    <div class="col-xl-4 form-group" id="boarder">
+        <center><img src="~/css/Add Task.gif" height="200" width="300" /></center>
+        <br />
+        <br />
+        <center><a href="../Home/AddTask" class="btn btn-primary">Add New Task</a></center>
+    </div>
+
+
+
+    <div class="col-xl-4 form-group" id="boarder">
+        <center><img src="~/css/Admin.gif" height="200" width="300" /></center>
+        <br />
+        <br />
+        <center><a href="../Home/DisplayUsers" class="btn btn-outline-danger">Admin</a></center>
+    </div>
+
+
+
+
+
+
+</div>
+
+

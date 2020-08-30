@@ -1,0 +1,50 @@
+﻿
+@model Todo
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+<h1 style="color:white">Add Task</h1>
+<form style="color:white" action="../Home/AddTask" method="post">
+    <label>Item</label>
+    @Html.ValidationMessageFor(m => m.Item)
+    <input type="text" minlength="2" maxlength="100" name="Item" required />
+    <label>Due Date</label>
+    <input type="date" name="DueDate" min="@DateTime.Today" required />
+    <label>Completed</label>
+    <input type="checkbox" name="Completed" value="true" />
+    <input type="checkbox" name="Completed" value="false" hidden />
+    <input type="submit" value="Add Task" class="btn btn-primary" />
+</form>
+
+<br />
+<br />
+<h6 style="color:white">Displaying Added item:</h6>
+@if (Model.Item != null)
+{
+    <table style="color:white" class="table">
+        <tr class="d-table-row">
+            <th>Item</th>
+            <th>Due Date</th>
+            <th>Completion Status</th>
+        </tr>
+
+
+        <tr class="d-table-row">
+            <th>@Model.Item</th>
+
+
+            <td style="color:white">@Model.DueDate.ToShortDateString()</td>
+            
+            <td style="color:white">@Model.Completed</td>
+
+
+        </tr>
+    </table>
+}
+<br />
+<br />
+
+<a href="../Home/Index" class="btn btn-primary">Return Home</a>
+

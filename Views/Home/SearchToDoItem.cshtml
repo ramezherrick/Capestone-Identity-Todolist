@@ -1,0 +1,50 @@
+﻿@model List<Todo>
+<style>
+    body {
+        background-color: black;
+    }
+
+</style>
+
+
+<h1 style="color:white">Search items by title</h1>
+<form action="../Home/SearchToDoItem" method="post">
+    <label for="name" style="color:white">Title</label>
+    <input type="text" name="name" />
+    <input type="submit" value="find item" />
+</form>
+<br />
+
+<table class="table" style="color:white">
+    <tr class="d-table-row">
+        <th>Item</th>
+        <th>Due Date</th>
+        <th>Completion Status</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (Todo todo in Model)
+        {
+            <tr class="d-table-row">
+                <th>@todo.Item</th>
+                @if (todo.DueDate < DateTime.Now && todo.Completed == false)
+                {
+                    <td style="color:red">@todo.DueDate.ToShortDateString()</td>
+                    <td style="color:red">@todo.Completed</td>
+
+                }
+
+                else
+                {
+                    <td>@todo.DueDate.ToShortDateString()</td>
+                    <td>@todo.Completed</td>
+
+                }
+
+
+            </tr>
+        }
+    }
+</table>
+<a href="../Home/Index" class="btn btn-primary">Home</a>
+

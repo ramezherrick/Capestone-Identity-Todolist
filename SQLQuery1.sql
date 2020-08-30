@@ -1,0 +1,7 @@
+--CREATE TABLE Todo(
+--Id INT PRIMARY KEY IDENTITY(1,1),
+--Item NVARCHAR(100) NOT NULL,
+--DueDate DATE,
+--Completed bit NOT NULL,
+--UserId NVARCHAR(450) FOREIGN KEY REFERENCES AspNetUsers(Id)
+--);

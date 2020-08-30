@@ -1,0 +1,31 @@
+﻿@model List<AspNetUsers>
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+<h2 style="color:white">DisplayUsers</h2>
+<br />
+<h4 style="color:white">You have @Model.Count Users, millions left to compete facebook, Good Luck!</h4>
+<br />
+<table style="color:white" class="table">
+    <tr class="d-table-row">
+        <td>User Id</td>
+        <td>User Name</td>
+        <td>Id</td>
+    </tr>
+    @{
+        int i = 1;
+        foreach (AspNetUsers user in Model)
+        {
+            
+            <tr class="d-table-row">
+                <td>@i</td>
+                <td>@user.Id</td>
+                <td>@user.UserName</td>
+            </tr>
+            i++;
+        }
+    }
+
+</table>

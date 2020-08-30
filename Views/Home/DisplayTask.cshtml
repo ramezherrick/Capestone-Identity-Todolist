@@ -1,0 +1,66 @@
+﻿<style>
+    body {
+        background-color: black;
+    }
+</style>
+
+<h1 style="color:white">Tasks</h1>
+
+@model List<Todo>
+
+
+<table class="table" style="color:white">
+    <tr class="d-table-row">
+        <th>Item</th>
+        <th>Due Date</th>
+        <th>Completion</th>
+        <th>Delete Task</th>
+        <th>Mark Completed</th>
+    </tr>
+    @foreach (Todo todo in Model)
+    {
+
+<tr class="d-table-row">
+    <td>@todo.Item</td>
+
+    @if (todo.DueDate < DateTime.Now && todo.Completed == false)
+    {
+        <td style="color:red">@todo.DueDate.ToShortDateString()</td>
+        <td style="color:red">@todo.Completed</td>
+
+    }
+    else
+    {
+        <td >@todo.DueDate.ToShortDateString()</td>
+        <td >@todo.Completed</td>
+
+    }
+
+<td><a href="../Home/DeleteTask?id=@todo.Id" class="btn btn-primary" onclick="return myFunction1()">Delete Task</a></td>
+    <td><a href="../Home/MarkComplete?id=@todo.Id" class="btn btn-primary" onclick="return myFunction2()">Change Completion Status</a></td>
+
+</tr>
+    }
+</table>
+<script>
+
+    function myFunction1()
+    {
+        if (confirm("Are you sure you want to delete this item?")) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    function myFunction2() {
+        if (confirm("Are you sure you want to change the completion status?")) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
