@@ -25,7 +25,7 @@ namespace Capestone_ToDoList.Controllers
             
         }
 
-        //Using Youtube video https://www.youtube.com/watch?v=xG56lRe6ptc
+
         //create a class clsCommon that return current user
         //if CEO is loggein in, the view will direct to the CEO VIEW where he could see how many users he has and their Ids
         
